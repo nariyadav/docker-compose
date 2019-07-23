@@ -1,19 +1,19 @@
 version: '2'
 services:
   python:
-    image: kammana/python-redis:1
+    image: nariyadav/docker:2.0
     container_name: python
     environment:
       - "redis_host=redis"
     ports:
      - "8080:5000"
     networks:
-      - javahome-app
+      - nariyadav
   redis:
     container_name: redis
     image: "redis"
     networks:
-      - javahome-app
+      - nariyadav
 networks:
   javahome-app:
     driver: bridge
